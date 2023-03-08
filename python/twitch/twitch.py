@@ -11,7 +11,10 @@ def get_all_clips_download_urls():
     link_css_selector = "div.gap-4:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > div:nth-child(1) > li:nth-child(1) > div:nth-child(3) > a:nth-child(1)"
 
     for i, clip_id in enumerate(clip_ids):
-        print(f"Getting clip download url ({i+1}/{len(clip_ids)})")
+        index = i+1
+        total = len(clip_ids)
+        percentage = 100 * index / total
+        print(f"\rExtracting clip download urls ({percentage:.2f}%)", end="")
         clip_url = f"https://clipr.xyz/{clip_id}"
         response = requests.get(clip_url)
         soup = BeautifulSoup(response.content, "html.parser")

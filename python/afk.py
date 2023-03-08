@@ -29,4 +29,4 @@ if __name__ == "__main__":
         move_mouse(start_time)
 
     except KeyboardInterrupt:
-        print(colored(f"\n\nExiting AFK. Lasted {time.time() - start_time} seconds", "red"))
+        print(colored(f"\n\nExiting AFK. Lasted {time.time() - start_time:.2f} seconds", "red"))
