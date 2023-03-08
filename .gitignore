@@ -1,5 +1,10 @@
 # twitch clips download
 python/twitch/data
 
+# build
+build
+__pycache__
+
 .env
 !.env.example
+
