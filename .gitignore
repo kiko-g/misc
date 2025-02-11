@@ -1,5 +1,4 @@
-# twitch clips download
-python/twitch/data
+.DS_Store
 
 # build
 build
@@ -8,3 +7,9 @@ __pycache__
 .env
 !.env.example
 
+# local
+data
+saved
+images
+html
+insane.py
