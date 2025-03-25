@@ -1,9 +1,11 @@
+import os
+from dotenv import load_dotenv
 
 import tweepy
 
 def retrieve_top_6_tweet_ids():
-    # Authenticate
-    client = tweepy.Client(bearer_token='AAAAAAAAAAAAAAAAAAAAAIZb0AEAAAAAt9yPOTYwviQytuhbpvBa9Yrkoxo%3Ds0i7OOWyTMmwGKZsmYIfaRszEw1pHFe3uqQWOaxyANEA8uep8Y')
+    # Get bearer token from environment variables
+    client = tweepy.Client(bearer_token=os.environ.get('TWITTER_BEARER_TOKEN'))
 
     # Replace with your user ID (can fetch it via username lookup)
     user = client.get_user(username="kikogoncalves_")
@@ -21,4 +23,5 @@ def retrieve_top_6_tweet_ids():
     return [tweet.id for tweet in top_6]
 
 if __name__ == "__main__":
+    load_dotenv()
     print(retrieve_top_6_tweet_ids())
